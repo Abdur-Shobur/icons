@@ -13,7 +13,6 @@ Copy the `assets` and `icon` folders into your project directory. These should c
 In your `global.css` file, import the icon styles:
 
 ```css
-@import '../assets/fonticon/fonticon.css';
 @import '../assets/keenicons/duotone/style.css';
 @import '../assets/keenicons/outline/style.css';
 @import '../assets/keenicons/solid/style.css';
@@ -50,7 +49,6 @@ type Props = {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Use Icon</title>
-		<link rel="stylesheet" href="./assets/fonticon/fonticon.css" />
 		<link rel="stylesheet" href="./assets/keenicons/duotone/style.css" />
 		<link rel="stylesheet" href="./assets/keenicons/outline/style.css" />
 		<link rel="stylesheet" href="./assets/keenicons/solid/style.css" />
@@ -66,12 +64,6 @@ type Props = {
 		</div>
 		<div style="font-size: 30px" class="clearfix bshadow0 pbs">
 			<span class="ki-solid ki-abstract-1"></span>
-		</div>
-		<div style="color: red; font-size: 30px">
-			<i class="fonticon-delivery"></i>
-			<i class="fonticon-bicycle"></i>
-			<i class="fonticon-bookmark"></i>
-			<i class="fonticon-like"></i>
 		</div>
 	</body>
 </html>
