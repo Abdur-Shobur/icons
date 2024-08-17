@@ -29,7 +29,7 @@ In your `global.css` file, import the icon styles:
 <KTIcon iconName="abstract-25" iconType="outline" />
 ```
 
-### 2. Icon Type is
+### Icon Type is
 
 ```ts
 type Props = {
@@ -39,7 +39,7 @@ type Props = {
 };
 ```
 
-**live Link ** [ ]()
+**live Link ** [https://keenicons.netlify.app/](https://keenicons.netlify.app/)
 
 ### Use in HTML
 

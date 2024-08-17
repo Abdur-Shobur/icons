@@ -2,8 +2,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import icons, { IconType } from '@/icon/icons';
- import toast, { Toaster } from 'react-hot-toast';
- import Button from '@/components/button';
+import toast, { Toaster } from 'react-hot-toast';
+import Button from '@/components/button';
 import { KTIcon } from '@/icon';
 
 export default function Home() {
@@ -33,15 +33,23 @@ export default function Home() {
 		iconName.toLowerCase().includes(searchTerm)
 	);
 	return (
-		<main className="container mx-auto my-10">
+		<main className="container mx-auto my-10 px-4">
 			<div className="mb-4 flex justify-between">
-				<h1 className="mb-2 text-3xl font-bold">
-					icons {' '}
-					<Link href="https://keenthemes.com/keenicons" target="_blank" className='text-blue-500 underline'>
+				<h1 className="mb-2 text-xl md:text-3xl font-bold">
+					icons{' '}
+					<Link
+						href="https://keenthemes.com/keenicons"
+						target="_blank"
+						className="text-blue-500 underline text-sm md:text-base"
+					>
 						[keenicons]
 					</Link>
 				</h1>
-				<Link href="https://github.com/Abdur-Shobur/icons" target='_blank' className="text-blue-500 underline">
+				<Link
+					href="https://github.com/Abdur-Shobur/icons"
+					target="_blank"
+					className="text-blue-500 underline text-sm md:text-base"
+				>
 					How to use Next js
 				</Link>
 			</div>
@@ -57,16 +65,14 @@ export default function Home() {
 					value={searchTerm}
 					onChange={handleSearchChange}
 					style={{
-						padding: '10px',
 						marginBottom: '20px',
 						width: '100%',
 						boxSizing: 'border-box',
-						fontSize: '16px',
 					}}
-					className="border border-gray-300 rounded-md"
+					className="border border-gray-300 rounded-md shadow text-base px-3 py-1"
 				/>
 			</div>
-			<div className="grid grid-cols-12 gap-2">
+			<div className="grid 2xl:grid-cols-12 xl:grid-cols-8 lg:grid-cols-6 md:grid-cols-4 grid-cols-3 gap-2">
 				{filteredIcons.map(([iconName, count]) =>
 					Array.from({ length: count }).map((_, index) => (
 						<div
@@ -76,7 +82,7 @@ export default function Home() {
 						>
 							<KTIcon
 								iconName={iconName}
-								className=" transition-all text-7xl "
+								className=" transition-all 2xl:text-7xl text-5xl"
 								iconType={iconType}
 							/>
 							<p className="text-xs">{iconName}</p>
