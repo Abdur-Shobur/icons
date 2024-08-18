@@ -9,7 +9,10 @@ import { KTIcon } from '@/icon';
 export default function Home() {
 	const [searchTerm, setSearchTerm] = useState('');
 	const [iconType, setIconType] = useState<IconType>('duotone');
-
+	const [selectedColor, setSelectedColor] = useState('#000000'); // Default color
+	const handleColorChange = (e) => {
+		setSelectedColor(e.target.value);
+	};
 	const handleIconClick = (iconName: string) => {
 		navigator.clipboard
 			.writeText(iconName)
@@ -58,6 +61,16 @@ export default function Home() {
 				<Button iconType={iconType} name="outline" setIconType={setIconType} />
 				<Button iconType={iconType} name="solid" setIconType={setIconType} />
 			</div>
+
+			<div className="mb-4">
+				<label className="mr-2">Select Icon Color:</label>
+				<input
+					type="color"
+					value={selectedColor}
+					onChange={handleColorChange}
+					className="cursor-pointer"
+				/>
+			</div>
 			<div>
 				<input
 					type="text"
@@ -78,7 +91,8 @@ export default function Home() {
 						<div
 							key={`${iconName}-${index}`}
 							onClick={() => handleIconClick(iconName)}
-							className="text-center cursor-pointer inline-block border transition-all  hover:text-green-500 border-blue-400 p-2 rounded-md hover:bg-blue-50 shadow-lg"
+							className="text-center cursor-pointer inline-block border transition-all   hover:text-green-500 border-blue-400 p-2 rounded-md hover:bg-blue-50 shadow-lg"
+							style={{ color: selectedColor }}
 						>
 							<KTIcon
 								iconName={iconName}
